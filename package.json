@@ -1,0 +1,22 @@
+{
+  "name": "youtube-clone",
+  "version": "1.0.0",
+  "description": "Cloning youtube with JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ltebtr/youtube-clone.git"
+  },
+  "author": "littlebitter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ltebtr/youtube-clone/issues"
+  },
+  "homepage": "https://github.com/ltebtr/youtube-clone#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
