@@ -16,6 +16,8 @@
   "dependencies": {
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "core-js": "^3.9.1",
     "express": "^4.17.1"
   },
   "scripts": {
