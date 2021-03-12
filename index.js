@@ -1,4 +1,6 @@
 import "core-js";
+import morgan from "morgan";
+import helmet from "helmet";
 import express from "express";
 
 const app = express();
@@ -13,7 +15,8 @@ const betweenHome = (req, res, next) => {
   console.log("I'm between");
   next();
 };
-app.use(betweenHome);
+app.use(morgan("dev"));
+app.use(helmet());
 app.get("/", handleHome);
 app.get("/profile", handleProfile);
 app.listen(PORT, handleListening);
