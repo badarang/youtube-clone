@@ -9,7 +9,7 @@ export const postJoin = (req, res) => {
     body: { name, email, password, password2 },
   } = req;
   if (password !== password2) {
-    res.status(400).send({ error: "Something failed!" });
+    res.status(400);
     res.render("join", { pageTitle: "Join" });
   } else {
     // To Do: Register User
@@ -18,9 +18,15 @@ export const postJoin = (req, res) => {
   }
 };
 
-export const login = (req, res) => res.render("login", { pageTitle: "Log In" });
-export const logout = (req, res) =>
-  res.render("logout", { pageTitle: "Log Out" });
+export const getLogin = (req, res) =>
+  res.render("login", { pageTitle: "Log In" });
+export const postLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+export const logout = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "User Detail" });
 export const editProfile = (req, res) =>
