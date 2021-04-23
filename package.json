@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Cloning youtube with JS",
   "main": "index.js",
+  "engines": {
+    "node": "15.11.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ltebtr/youtube-clone.git"
@@ -19,6 +22,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.13.10",
     "autoprefixer": "^10.2.5",
+    "aws-sdk": "^2.891.0",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
     "body-parser": "^1.19.0",
@@ -33,10 +37,12 @@
     "express-session": "^1.17.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "flash": "^1.1.0",
+    "get-blob-duration": "^1.2.0",
     "helmet": "^4.4.1",
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "node-sass": "^5.0.0",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
@@ -51,15 +57,18 @@
     "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --delay 5 --ignore '.scss' --ignore 'static' ",
-    "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
-    "build:assets": "cross-env WEBPACK_ENV=production webpack",
-    "build:server": "babel src --out-dir build --ignore src/static --ignore src/assets --ignore src/webpack.config.js",
-    "copyAll": "xcopy src\\static build\\static /d /e /h /c /y /i && xcopy src\\views build\\views /d /e /h /c /y /i",
+    "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static' ",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
+    "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+    "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prebuild": "rd /s \"build\""
+    "prebuild": "rm -rf build",
+    "tunnel": "lt --port 4000",
+    "start": "node build/init.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.16",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
