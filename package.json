@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/ltebtr/youtube-clone#readme",
   "dependencies": {
+    "@babel/cli": "^7.13.16",
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
-    "@babel/polyfill": "^7.12.1",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.13.10",
     "autoprefixer": "^10.2.5",
     "aws-sdk": "^2.891.0",
@@ -30,6 +31,7 @@
     "cookie-parser": "^1.4.5",
     "core-js": "^3.9.1",
     "cross-env": "^7.0.3",
+    "css-loader": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-flash": "^0.0.2",
@@ -68,13 +70,11 @@
     "prestart": "npm run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "mini-css-extract-plugin": "^1.4.1",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1"
   }
