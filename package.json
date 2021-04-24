@@ -22,7 +22,6 @@
     "@babel/node": "^7.13.10",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.13.10",
-    "autoprefixer": "^10.2.5",
     "aws-sdk": "^2.891.0",
     "axios": "^0.21.1",
     "babel-loader": "^8.0.4",
@@ -40,6 +39,7 @@
     "flash": "^1.1.0",
     "get-blob-duration": "^1.2.0",
     "helmet": "^4.4.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
@@ -50,7 +50,8 @@
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
-    "postcss-loader": "^3.0.0",
+    "postcss": "^7.0.35",
+    "postcss-loader": "^4.0.3",
     "pug": "^3.0.2",
     "sass-loader": "^10.0.5",
     "webpack": "^4.25.1",
@@ -69,6 +70,7 @@
     "prestart": "npm run build"
   },
   "devDependencies": {
+    "autoprefixer": "^9.0.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
