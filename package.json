@@ -24,13 +24,12 @@
     "autoprefixer": "^10.2.5",
     "aws-sdk": "^2.891.0",
     "axios": "^0.21.1",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.0.4",
     "body-parser": "^1.19.0",
-    "connect-mongo": "^4.4.1",
+    "connect-mongo": "^2.0.1",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.9.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-flash": "^0.0.2",
@@ -49,12 +48,12 @@
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
-    "postcss-loader": "^5.2.0",
+    "postcss-loader": "^3.0.0",
     "pug": "^3.0.2",
     "sass": "^1.32.8",
-    "sass-loader": "^11.0.1",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static' ",
@@ -65,7 +64,8 @@
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prebuild": "rm -rf build",
     "tunnel": "lt --port 4000",
-    "start": "node build/init.js"
+    "start": "PRODUCTION=true node build/init.js",
+    "prestart": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
