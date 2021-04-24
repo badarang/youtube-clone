@@ -129,4 +129,5 @@ function init() {
 
 if (videoContainer) {
   init();
+  console.log(1);
 }
